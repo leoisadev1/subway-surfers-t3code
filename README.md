@@ -14,7 +14,7 @@ This fork includes:
 - `Watch` mode for vertical Subway Surfers gameplay
 - A docked layout that keeps the panel pinned open instead of floating over the app
 
-![Subway Surfers panel demo](./assets/subway-surfers-panel-demo.gif)
+<img src="./assets/subway-surfers-panel-demo.gif" alt="Subway Surfers panel demo" width="720" />
 
 ## Installation
 
