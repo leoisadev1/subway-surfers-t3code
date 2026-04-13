@@ -2,6 +2,14 @@
 
 T3 Code is a minimal web GUI for coding agents (currently Codex and Claude, more coming soon).
 
+## Subway Surfers Mode
+
+T3 Code now includes a docked `Subway Surfers` panel with `Play` and `Watch` modes.
+It is exactly what it sounds like: a small sidecar to keep you a little less bored while your
+agent works.
+
+<video src="./assets/subway-surfers-panel-demo.mp4" controls muted playsinline width="360"></video>
+
 ## Installation
 
 > [!WARNING]
