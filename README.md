@@ -1,14 +1,20 @@
-# T3 Code
+# T3 Code: Subway Surfers Fork
 
 T3 Code is a minimal web GUI for coding agents (currently Codex and Claude, more coming soon).
 
+This fork adds a persistent docked `Subway Surfers` panel on the right side of the app so you have
+something to watch or play while your agent works. The main chat content shifts left when the panel
+is open, and the panel stays there until you close it.
+
 ## Subway Surfers Mode
 
-T3 Code now includes a docked `Subway Surfers` panel with `Play` and `Watch` modes.
-It is exactly what it sounds like: a small sidecar to keep you a little less bored while your
-agent works.
+This fork includes:
 
-<video src="./assets/subway-surfers-panel-demo.mp4" controls muted playsinline width="360"></video>
+- `Play` mode for an embedded Subway Surfers runner
+- `Watch` mode for vertical Subway Surfers gameplay
+- A docked layout that keeps the panel pinned open instead of floating over the app
+
+![Subway Surfers panel demo](./assets/subway-surfers-panel-demo.gif)
 
 ## Installation
 
