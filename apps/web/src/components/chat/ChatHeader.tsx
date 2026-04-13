@@ -9,7 +9,7 @@ import { scopeThreadRef } from "@t3tools/client-runtime";
 import { memo } from "react";
 import GitActionsControl from "../GitActionsControl";
 import { type DraftId } from "~/composerDraftStore";
-import { DiffIcon, TerminalSquareIcon } from "lucide-react";
+import { DiffIcon, Gamepad2Icon, TerminalSquareIcon } from "lucide-react";
 import { Badge } from "../ui/badge";
 import { Tooltip, TooltipPopup, TooltipTrigger } from "../ui/tooltip";
 import ProjectScriptsControl, { type NewProjectScriptInput } from "../ProjectScriptsControl";
@@ -35,10 +35,12 @@ interface ChatHeaderProps {
   diffToggleShortcutLabel: string | null;
   gitCwd: string | null;
   diffOpen: boolean;
+  subwaySurfersOpen: boolean;
   onRunProjectScript: (script: ProjectScript) => void;
   onAddProjectScript: (input: NewProjectScriptInput) => Promise<void>;
   onUpdateProjectScript: (scriptId: string, input: NewProjectScriptInput) => Promise<void>;
   onDeleteProjectScript: (scriptId: string) => Promise<void>;
+  onSubwaySurfersOpenChange: (open: boolean) => void;
   onToggleTerminal: () => void;
   onToggleDiff: () => void;
 }
@@ -61,10 +63,12 @@ export const ChatHeader = memo(function ChatHeader({
   diffToggleShortcutLabel,
   gitCwd,
   diffOpen,
+  subwaySurfersOpen,
   onRunProjectScript,
   onAddProjectScript,
   onUpdateProjectScript,
   onDeleteProjectScript,
+  onSubwaySurfersOpenChange,
   onToggleTerminal,
   onToggleDiff,
 }: ChatHeaderProps) {
@@ -114,6 +118,21 @@ export const ChatHeader = memo(function ChatHeader({
             activeThreadRef={scopeThreadRef(activeThreadEnvironmentId, activeThreadId)}
             {...(draftId ? { draftId } : {})}
           />
+        )}
+        {activeProjectName && (
+          <Toggle
+            className="shrink-0 gap-1.5 px-2.5"
+            pressed={subwaySurfersOpen}
+            onPressedChange={onSubwaySurfersOpenChange}
+            aria-label={
+              subwaySurfersOpen ? "Close Subway Surfers panel" : "Open Subway Surfers panel"
+            }
+            variant="outline"
+            size="xs"
+          >
+            <Gamepad2Icon className="size-3.5" />
+            <span>Subway Surfers</span>
+          </Toggle>
         )}
         <Tooltip>
           <TooltipTrigger
